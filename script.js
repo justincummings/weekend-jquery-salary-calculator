@@ -74,6 +74,21 @@ function calculateTotalSalary() {
     return totalSalary;
 }
 
+function deleteAddedEmployee () {
+    console.log("in deleteAdded");
+    let employeeID = $(this).parent().parent().attr('id');
+    console.log(employeeID);
+    employeeID = (employeeID);
+    console.log(employeeID);
+    $(this).parent().parent().remove();
+    let index = employees.findIndex(function (employee) {
+        return employee.id === employeeID;
+    });
+    employees.splice(index, 1);
+    renderForm(employees);
+}
+
+renderTotalSalary();
 
 
 
